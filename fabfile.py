@@ -18,7 +18,8 @@ def provisionServer():
 
     put('runlist.json', 'runlist.json')
 
-    sudo('chef-solo -j runlist.json -r cookbooks.tar.gz')
+    # sudo('chef-solo -j runlist.json -r cookbooks.tar.gz')
+    sudo('chef-client -c client.rb -j runlist.json')
 
 
 @task
